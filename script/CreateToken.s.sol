@@ -11,7 +11,7 @@ contract CreateToken is Script {
         address account = vm.envAddress("ACCOUNT_ADDRESS");
         bytes32 salt = keccak256("baseanova-bnova-v1");
         // Name, symbol, initial DEFAULT_ADMIN_ROLE holder, decimals (6-18).
-        bytes memory params = B20FactoryLib.encodeAssetCreateParams("Baseanova", "BNOVA", account, 18);
+        bytes memory params = B20FactoryLib.encodeAssetCreateParams("B20Nation", "NAT20", account, 18);
         // Configuration applied atomically at creation.
         bytes[] memory initCalls = new bytes[](2);
         initCalls[0] = B20FactoryLib.encodeGrantRole(B20Constants.MINT_ROLE, account);
